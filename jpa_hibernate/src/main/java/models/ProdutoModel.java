@@ -7,41 +7,41 @@ import main.java.entities.Produto;
 
 public class ProdutoModel {
     public void create(Produto p) {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("admin-jpa");
-    EntityManager em = emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("admin-jpa");
+        EntityManager em = emf.createEntityManager();
 
-    try {
-     System.out.println("Iniciando a transação");
-     em.getTransaction().begin();
-     em.persist(p);
-     em.getTransaction().commit();
-     System.out.println("Produto criado com sucesso !!!");
-    } catch (Exception e) {
-     em.close();
-     System.err.println("Erro ao criar o produto !!!" + e.getMessage());
-    } finally {
-     em.close();
-     System.out.println("Finalizando a transação");
+        try {
+            System.out.println("Iniciando a transação");
+            em.getTransaction().begin();
+            em.persist(p);
+            em.getTransaction().commit();
+            System.out.println("Produto criado com sucesso !!!");
+        } catch (Exception e) {
+            em.close();
+            System.err.println("Erro ao criar o produto !!!" + e.getMessage());
+        } finally {
+            em.close();
+            System.out.println("Finalizando a transação");
+        }
     }
-   }
 
     public void update(Produto p) {
-        //TODO
+        // TODO
     }
 
     public void delete(Produto p) {
-        //TODO
+        // TODO
     }
 
     public Produto findById(Produto p) {
-        //TODO
+        // TODO
         return null;
     }
 
     public List<Produto> findAll() {
 
         List<Produto> produtos = new ArrayList<Produto>();
-        //TODO
+        // TODO
         return null;
-}
+    }
 }
