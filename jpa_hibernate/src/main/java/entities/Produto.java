@@ -1,11 +1,13 @@
 package main.java.entities;
 
+@Entity
 public class Produto {
+    @Id
     private int id;
     private String nome;
     private int quantidade;
     private double preco;
-    private String status;
+    private boolean status;
     
     public int getId() {
         return id;
@@ -31,10 +33,10 @@ public class Produto {
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 }
