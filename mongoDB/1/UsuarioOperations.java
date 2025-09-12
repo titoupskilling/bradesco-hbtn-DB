@@ -18,7 +18,7 @@ public class UsuarioOperations {
 
             MongoCollection<Document> collect = connection.getDatabase().getCollection("usuario");
 
-            collect.insertOne(new Document("", u1));
+            collect.insertMany(Arrays.asList(u1.toDocument(), u2.toDocument(), u3.toDocument()));
         }
 
         try {
