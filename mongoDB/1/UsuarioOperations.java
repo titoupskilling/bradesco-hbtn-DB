@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.client.MongoCollection;
 
@@ -19,6 +20,21 @@ public class UsuarioOperations {
             MongoCollection<Document> collect = connection.getDatabase().getCollection("usuario");
 
             collect.insertMany(Arrays.asList(u1.toDocument(), u2.toDocument(), u3.toDocument()));
+
+            collect.updateOne(new Bson() {
+                String nome = "Bob";
+            }, 
+            new Bson() {
+                int idade = 32;
+            });
+
+            collect.find(new Bson() {
+                String nome = "Bob";
+            });
+
+            collect.deleteOne(new Bson() {
+                String nome = "Charlie";
+            });
         }
 
         try {
